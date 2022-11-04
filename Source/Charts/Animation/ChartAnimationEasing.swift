@@ -336,12 +336,12 @@ internal struct EasingFunctions
         var position: TimeInterval = elapsed / duration
         return Double( position * position * ((s + 1.0) * position - s) )
     }
-    
+      
     internal static let EaseOutBack = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
         let s: TimeInterval = 1.70158
         var position: TimeInterval = elapsed / duration
         position -= 1.0
-        return Double( position * position * ((s + 1.0) * position + s) + 1.0 )
+        return Double( position * position * ((s + Double(1.0)) * position + s) + Double(1.0) )
     }
     
     internal static let EaseInOutBack = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
